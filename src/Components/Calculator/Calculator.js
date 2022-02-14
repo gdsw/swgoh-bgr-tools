@@ -11,12 +11,14 @@ export class Calculator extends Component {
             zamSpeed: 0,
             sharedSpeed: 0,
             maulSpeed: 0,
-            darthMaulSpeed: 0
+            darthMaulSpeed: 0,
+            kyleSpeed: 0
         };
 
         this.handleZamInput = this.handleZamInput.bind(this);
         this.handleMaulInput = this.handleMaulInput.bind(this);
         this.handleDarthMaulInput = this.handleDarthMaulInput.bind(this);
+        this.handleKyleInput = this.handleKyleInput.bind(this);
 
     }
 
@@ -32,13 +34,19 @@ export class Calculator extends Component {
     handleMaulInput = (e) => {
         let value = e.target.value,
             calc = calculatorService.calculateMaulSpeed(value);
-        this.setState({ maulSpeed: calc.maulSpeed });
+        this.setState({ maulSpeed: calc });
     }
 
     handleDarthMaulInput = (e) => {
         let value = e.target.value,
         calc = calculatorService.calculateDarthMaulSpeed(value);
-    this.setState({ darthMaulSpeed: calc.darthMaulSpeed });
+    this.setState({ darthMaulSpeed: calc });
+    }
+
+    handleKyleInput = (e) => {
+        let value = e.target.value,
+            calc = calculatorService.calculateKyleSpeed(value);
+        this.setState({ kyleSpeed: calc });
     }
 
     render() {
@@ -82,6 +90,19 @@ export class Calculator extends Component {
                         <ReactBootstrap.Form.Group className="mb-3">
                             <ReactBootstrap.Form.Label>Darth Maul Lead(20% TM)</ReactBootstrap.Form.Label>
                             <ReactBootstrap.Form.Control value={this.state.darthMaulSpeed} className="bg-warning" disabled type="number" />
+                        </ReactBootstrap.Form.Group>
+                    </ReactBootstrap.Accordion.Body>
+                </ReactBootstrap.Accordion.Item>
+                <ReactBootstrap.Accordion.Item eventKey="4">
+                    <ReactBootstrap.Accordion.Header className="calculator-header">Kyle Katarn Speed Calculator</ReactBootstrap.Accordion.Header>
+                    <ReactBootstrap.Accordion.Body className='bg-dark'>
+                        <ReactBootstrap.Form.Group className="mb-3">
+                            <ReactBootstrap.Form.Label>Starting Speed</ReactBootstrap.Form.Label>
+                            <ReactBootstrap.Form.Control id="zam" type="number" placeholder="Speed" onInput={this.handleKyleInput} />
+                        </ReactBootstrap.Form.Group>
+                        <ReactBootstrap.Form.Group className="mb-3">
+                            <ReactBootstrap.Form.Label>Kyle Katarn Unique(30% TM)</ReactBootstrap.Form.Label>
+                            <ReactBootstrap.Form.Control value={this.state.kyleSpeed} className="bg-warning" disabled type="number" />
                         </ReactBootstrap.Form.Group>
                     </ReactBootstrap.Accordion.Body>
                 </ReactBootstrap.Accordion.Item>
