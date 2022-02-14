@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/swgoh-bgr-tools/static/css/main.dfb322a6.css",
-    "main.js": "/swgoh-bgr-tools/static/js/main.6741b28a.js",
+    "main.js": "/swgoh-bgr-tools/static/js/main.4152f487.js",
     "index.html": "/swgoh-bgr-tools/index.html",
     "main.dfb322a6.css.map": "/swgoh-bgr-tools/static/css/main.dfb322a6.css.map",
-    "main.6741b28a.js.map": "/swgoh-bgr-tools/static/js/main.6741b28a.js.map"
+    "main.4152f487.js.map": "/swgoh-bgr-tools/static/js/main.4152f487.js.map"
   },
   "entrypoints": [
     "static/css/main.dfb322a6.css",
-    "static/js/main.6741b28a.js"
+    "static/js/main.4152f487.js"
   ]
 }
